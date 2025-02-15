@@ -1,0 +1,90 @@
+.app {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 15px;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px; /* Set fixed height for consistency */
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, rotate 0.3s ease;
+  animation: zoomIn 0.5s ease-out;
+  justify-content: end;
+}
+
+.gallery-image:hover {
+  transform: scale(1.1) rotate(5deg); /* Slight rotation effect */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 255, 255, 0.2); /* Aqua-like overlay effect */
+  color: brown;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.stylish-title {
+  font-family: 'Poppins', sans-serif; /* Use a modern font */
+  font-size: 4rem; /* Large font size */
+  color: #ff6b6b; /* Vibrant color */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Add depth with shadow */
+  letter-spacing: 2px; /* Add spacing between letters */
+  animation: fadeInSlide 2s ease-in-out, colorCycle 5s infinite; /* Add animations */
+  text-transform: uppercase; /* Make the text uppercase */
+  background: linear-gradient(90deg, #ff6b6b, #48ffa3, #6b6bff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Gradient text */
+  display: inline-block;
+  image-rendering: auto;
+}
+
+/* Slide and fade animation */
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gradient color animation */
+@keyframes colorCycle {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
